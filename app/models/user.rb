@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 
 
   def user_name
-  	"#{profile_name} (#{first_name} #{last_name})"
+  	"#{profile_name}"
   end
 
   def full_name
