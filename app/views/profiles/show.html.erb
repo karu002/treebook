@@ -1,13 +1,21 @@
 <div class="page-header">
+
 	<h1><%= @user.user_name %></h1>
 </div>
 
 <% if @statuses %>
 	<% @statuses.each do |status| %>
 		<div class="well">
-			<%= status.content %>
-			<hr />
-			<%= link_to time_ago_in_words(status.created_at), status_path(status) %> ago
+			<div class="row-fluid">
+				<div class="span2">
+					<%= image_tag status.user.gravatar_url %>
+				</div>
+				<div class="span10">
+					<%= status.content %>
+					<hr/>
+					<%= link_to time_ago_in_words(status.created_at), status_path(status) %> ago
+				</div>	
+			</div>
 		</div>
 	<% end %>
 <% end %>

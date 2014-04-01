@@ -1,14 +1,22 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @status.user.user_name %>
-</p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @status.content %>
-</p>
+<div class="well">
+	<div class="row-fluid">
+		<div class="span2">
+			<%= image_tag @status.user.gravatar_url %>
+		</div>
+		<div class="span10">
+			<p>
+			  <b>Name:</b>
+			  <%= @status.user.user_name %>
+			</p>
 
-<%= link_to 'Edit', edit_status_path(@status) %> |
-<%= link_to 'Back', feed_path %>
+			<p>
+			  <strong>Content:</strong>
+			  <%= @status.content %>
+			</p>
+
+			<%= link_to 'Edit', edit_status_path(@status) %> |
+			<%= link_to 'Back', feed_path %>
+		</div>
+</div>
