@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Treebook</title>
+  <title>Changes</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <%= favicon_link_tag %>
 </head>
 <body>
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
-				<a class ="brand" href="#">Treebook</a>
+				<a class ="brand">Everybody's Changin</a>
 				<ul class="nav">
-					<li><%= link_to "All Statuses", feed_path %> </li>
+					<li><%= link_to "Happenings", feed_path %> </li>
 				</ul>
 				<ul class="nav pull-right">
 					<% if user_signed_in? %>
