@@ -3,6 +3,12 @@
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
+  <div class="alert alert-info">
+  To use your own custom profile photo sign up here at <a href="http://en.gravatar.com/" target="_new">Gravatar</a></br>
+
+  This service allows you to bind a photo of your choosing to any one of your email addresses.
+  </div>
+
   <%= f.input :first_name %>
 
   <%= f.input :last_name %>
