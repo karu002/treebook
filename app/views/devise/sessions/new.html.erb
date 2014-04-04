@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row-fluid">
 	<div class="span4 sign-in-padding">
 	<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "well"}) do |f| %>
 	  
@@ -18,7 +18,7 @@
 	<%= render "devise/shared/links" %>
 	</div>
 
-	<div class="span8">
+	<div class="span8 text-center">
 		<h2> Signing in is easy and secure </h2>
 	</div>
 </div>

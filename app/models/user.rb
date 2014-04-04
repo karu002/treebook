@@ -7,9 +7,9 @@ class User < ActiveRecord::Base
   has_many :statuses
 
 
-  validates :first_name, presence: true # makes sure the first name is there
-  validates :last_name, presence: true
-  validates :profile_name, presence: true, uniqueness: true, format: {with: /\A[a-zA-Z0-9_-]+\z/, message: 'must be formatted correctly.'}
+  validates :first_name, presence: true # makes sure the first name is entered
+  validates :last_name, presence: true # makes sure the last name is entered
+  validates :profile_name, presence: true, uniqueness: true, format: {with: /\A[a-zA-Z0-9_-]+\z/, message: 'must not contain any spaces.'}
 
 
   def user_name
