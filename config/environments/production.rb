@@ -1,7 +1,5 @@
 Treebook::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
-  config.assets.compile = true
   
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -47,31 +45,31 @@ Treebook::Application.configure do
   # Set to :debug to see everything in the log.
   config.log_level = :info
 
-  # YourApp::Application.configure do
   # config.action_mailer.smtp_settings = {
   #   :address   => "smtp.mandrillapp.com",
   #   :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
   #   :enable_starttls_auto => true, # detects and uses STARTTLS
-  #   :user_name => "kirushi.a@outlook.com",
-  #   :password  => "EscWKKDr5LSqDWf5aGyxdA", # SMTP password is any valid API key
+  #   :user_name => ENV["MANDRILL_USERNAME"], 
+  #   :password  => ENV["MANDRILL_APIKEY"], # SMTP password is any valid API key
   #   :authentication => 'login', # Mandrill supports 'plain' or 'login'
-  #   :domain => 'designbygiants.co.nz', # your domain to identify your server when connecting
+  #   :domain => ENV["DOMAIN"], # your domain to identify your server when connecting
   # }
 
-  # # …
-  # end
 
-  # # app/mailers/your_mailer.rb
+  config.action_mailer.default_url_options = { :host => 'http://sharedjournal.herokuapp.com/' } 
+  # ActionMailer Config
+  # Setup for production - deliveries, no errors raised 
+  config.action_mailer.delivery_method = :smtp 
+  config.action_mailer.perform_deliveries = true 
+  config.action_mailer.raise_delivery_errors = false 
+  config.action_mailer.default :charset => "utf-8"
 
-  # class YourMailer < ActionMailer::Base
-  #   def email_name
-  #     mail :subject => "Mandrill rides the Rails!",
-  #          :to      => "kirushi.a@outlook.com",
-  #          :from    => "kirushi@designbygiants.co.nz"
-  #   end
-  # end
-
-
+  config.action_mailer.smtp_settings = { 
+    :address => "smtp.mandrillapp.com", 
+    :port => 587,
+    :user_name => ENV["MANDRILL_USERNAME"], 
+    :password => ENV["MANDRILL_API_KEY"]
+  }
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
