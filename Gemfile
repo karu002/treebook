@@ -7,7 +7,7 @@ gem 'rails', '4.0.4'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
-# Use for easy configuration
+# Use for easy configuration of environment variables
 gem 'figaro'
 
 # Use for monitoring

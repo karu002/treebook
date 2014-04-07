@@ -41,4 +41,5 @@ Treebook::Application.configure do
     :user_name => ENV['GMAIL_SMTP_USER'],
     :password => ENV['GMAIL_SMTP_PASSWORD'],
 }
+
 end
