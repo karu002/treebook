@@ -7,6 +7,9 @@ gem 'rails', '4.0.4'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+# Use for monitoring
+gem 'newrelic_rpm'
+
 # Used for forms
 gem 'simple_form'
 
