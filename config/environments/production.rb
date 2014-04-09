@@ -38,12 +38,24 @@ Treebook::Application.configure do
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
-
+d
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
 
   # Set to :debug to see everything in the log.
   config.log_level = :info
+
+  config.action_mailer.default_url_options = { :host => 'sharedjournal.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.mandrillapp.com",
+    :port                 => 587,
+    :enable_starttls_auto => true,
+    :user_name            => 'kirushi.a@outlook.com',
+    :password             => 'EscWKKDr5LSqDWf5aGyxdA',
+    :authentication       => 'login',
+    :domain => 'designbygiants.co.nz'
+  }
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]

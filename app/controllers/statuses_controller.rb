@@ -1,6 +1,6 @@
 class StatusesController < ApplicationController
   skip_before_filter :verify_authenticity_token
-  before_filter :authenticate_user!, only: [:new, :create, :edit, :update]
+  before_filter :authenticate_user!
   before_action :set_status, only: [:show, :edit, :update, :destroy]
 
   # GET /statuses

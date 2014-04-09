@@ -15,5 +15,5 @@ class UserFriendshipTest < ActiveSupport::TestCase
 	    UserFriendship.create user_id: users(:kirushi).id, friend_id: users(:carl).id
 	    assert users(:kirushi).friends.include?(users(:carl))
 	end
-
+	
 end
