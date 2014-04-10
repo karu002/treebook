@@ -49,7 +49,7 @@ class UserFriendshipsControllerTest < ActionController::TestCase
 				assert_equal users(:kirushi), assigns(:user_friendship).user
 			end
 
-			should "returns a 404 status if no friend is found" do
+			should "return a 404 status if no friend is found" do
 				get :new, friend_id: "invalid"
 				assert_response :not_found
 			end
@@ -92,12 +92,12 @@ class UserFriendshipsControllerTest < ActionController::TestCase
 
 			context "with a valid friend_id" do
 				setup do
-					post :create, friend_id: users(:carl)
+					post :create, user_friendship: { friend_id: users(:carl) }
 				end
 
 				should "assign a friend object" do
 					assert assigns(:friend)
-					assert_equal users(:kirushi), assigns(:friend)
+					assert_equal users(:carl), assigns(:friend)
 				end
 
 				should "assign a user_friendship object" do
@@ -108,6 +108,16 @@ class UserFriendshipsControllerTest < ActionController::TestCase
 
 				should "create a friendship" do
 					assert users(:kirushi).friends.include?(users(:carl))
+				end
+
+				should "redirect to profile page of the friend" do
+					assert_response :redirect
+					assert_redirected_to profiles_path(users(:carl))
+				end
+
+				should "set the flash success message" do
+					assert flash[:success]
+					assert_equal "You are now friends with #{users(:carl).full_name}", flash[:success]
 				end
 
 			end
