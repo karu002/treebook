@@ -14,7 +14,7 @@
 				<div class="span10">
 					<%= status.content %>
 					<hr/>
-					<%= link_to time_ago_in_words(status.created_at), status_path(status) %> ago
+					<%= time_ago_in_words(status.created_at) %> ago
 				</div>	
 			</div>
 		</div>
