@@ -7,6 +7,7 @@ class UserFriendshipsController < ApplicationController
 			@friend = User.where(profile_name: params[:friend_id]).first
 			raise ActiveRecord::RecordNotFound if @friend.nil?
 			@user_friendship = current_user.user_friendships.new(friend: @friend)
+			puts @user_friendship.friend_id
 		else
 			flash[:error] = "Friend required"
 		end
@@ -29,13 +30,8 @@ class UserFriendshipsController < ApplicationController
 
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user_friendship
-      @user_friendship = current_user.user_friendships.new(friend: @friend)
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_friendship_params
-      params.require(:user_friendship).permit(:friend_id, :profile_name, :user_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def user_friendship_params
+    params(:user_friendship).permit(:friend_id,:profile_name, :user_id)
+  end
 end
