@@ -37,9 +37,9 @@ Treebook::Application.configure do
     :port                 => 587,
     :enable_starttls_auto => true,
     :authentication       => 'login',
-    :user_name            => ENV['MANDRILL_USERNAME'],
-    :password             => ENV['MANDRILL_API_KEY'],
-    :domain               => ENV['DOMAIN']
+    :user_name            => "kirushi.a@outlook.com",
+    :password             => "EscWKKDr5LSqDWf5aGyxdA",
+    :domain               => "designbygiants.co.nz"
   }
 
 end
