@@ -54,8 +54,9 @@ group :doc do
 end
 
 
-
-gem 'rails_12factor'
+group :production do
+	gem 'rails_12factor'
+end
 
 # to allow assets in production env
 

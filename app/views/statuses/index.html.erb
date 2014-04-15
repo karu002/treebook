@@ -14,8 +14,8 @@
 			<div class="span7">
 				<strong><%= status.user.user_name %></strong>
 				<p><%= status.content %></p>
+				<p class="color-grey"><%= "about "+time_ago_in_words(status.created_at)+" ago"%></p>
 				<div class="meta">
-					<p class="color-grey"><%= "about "+time_ago_in_words(status.created_at)+" ago"%></p>
 					<% if status.user == current_user %> 
 						<span class="admin">
 							<%= link_to "Edit", edit_status_path(status) %> |
