@@ -1,4 +1,4 @@
-<div class="page-header">
+<div class="page-header bottom-space">
 	<h1> What did we all do today? </h1>
 </div>
 
@@ -12,10 +12,10 @@
 				<%= link_to image_tag(status.user.gravatar_url), profiles_path(status.user)%>
 			</div>
 			<div class="span7">
-				<strong> <%= status.user.user_name %></strong>
+				<strong><%= status.user.user_name %></strong>
 				<p><%= status.content %></p>
 				<div class="meta">
-					<%= "about "+time_ago_in_words(status.created_at)+" ago" %> 
+					<p class="color-grey"><%= "about "+time_ago_in_words(status.created_at)+" ago"%></p>
 					<% if status.user == current_user %> 
 						<span class="admin">
 							<%= link_to "Edit", edit_status_path(status) %> |
