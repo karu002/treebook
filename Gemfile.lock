@@ -42,6 +42,8 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    dynopoker (1.2.1)
+      logger
     erubis (2.7.0)
     execjs (2.0.2)
     figaro (0.7.0)
@@ -57,13 +59,13 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.1)
     kgio (2.9.2)
+    logger (1.2.8)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.9.2)
-    newrelic_rpm (3.7.3.204)
     orm_adapter (0.5.0)
     pg (0.17.1)
     polyglot (0.3.4)
@@ -148,10 +150,10 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
+  dynopoker
   figaro
   jbuilder (~> 1.2)
   jquery-rails
-  newrelic_rpm
   pg
   rails (= 4.0.4)
   rails_12factor

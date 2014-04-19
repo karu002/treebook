@@ -10,8 +10,8 @@ gem 'pg'
 # Use for easy configuration of environment variables
 gem 'figaro'
 
-# Use for monitoring
-gem 'newrelic_rpm'
+# Use for pinging sharedjournal
+gem 'dynopoker'
 
 # Used for forms
 gem 'simple_form'
